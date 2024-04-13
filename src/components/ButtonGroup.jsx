@@ -1,12 +1,14 @@
+import { useContext } from "react";
 import Button from "./Button";
+import { ItemsContext } from "../context/ItemsListContextProvider";
 
-export default function ButtonGroup({
-  handleRemoveAllItems,
-  handleResetToInitial,
-  handleMarkedAsComplete,
-  handleMarkedAsIncomplete,
-  handleDeleteItem,
-}) {
+export default function ButtonGroup() {
+  const {
+    handleRemoveAllItems,
+    handleResetToInitial,
+    handleMarkedAsComplete,
+    handleMarkedAsIncomplete,
+  } = useContext(ItemsContext);
   const secondaryButton = [
     {
       title: "Remove All Items",
