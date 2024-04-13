@@ -1,9 +1,13 @@
-import { useItemsContext } from "../lib/hooks";
+import { useItemsStore } from "../store/itemsStore";
 import Counter from "./Counter";
 import Logo from "./Logo";
 
 export default function Header() {
-  const { totalNumberOfItems, numberOfItemsPacked } = useItemsContext();
+  const totalNumberOfItems = useItemsStore((state) => state.totalNumberOfItems);
+  const numberOfItemsPacked = useItemsStore(
+    (state) => state.numberOfItemsPacked
+  );
+
   return (
     <header>
       <Logo />
